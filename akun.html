@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Pengaturan Akun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+
+        .navbar {
+            background-color: #003f88;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 50px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #e7f0fc;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .sidebar .menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .sidebar .menu li a:hover {
+            background-color: #036acb;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .content .title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            background-color: #cbe0fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content .form-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .content .form-group {
+            flex: 1;
+            background-color: #f1f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content .form-group h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .content .form-group label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .content .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .edit-icon {
+            cursor: pointer;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        .edit-icon:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="SiapBantu_Logo.png" alt="SiapBantu Logo">
+        </div>
+        <div class="title">SiapBantu</div>
+        <div class="nav">
+            <a href="homepage.html">Beranda</a>
+            <a href="notifikasi_jadwal_penyedia_jasa.html">Notifikasi Pesanan</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <img src="orang.png" alt="Profile" class="profile-image">
+            <ul class="menu">
+                <li><a href="informasi_dasar_penyedia.html">Informasi Dasar Penyedia</a></li>
+                <li><a href="ulasan.html">Riwayat Ulasan dan Rating</a></li>
+                <li><a href="notifikasi_jadwal_penyedia_jasa.html">Notifikasi Pesanan</a></li>
+                <li><a href="akun.html">Pengaturan Akun</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="title">Pengaturan Akun</div>
+            <div class="form-section">
+                <div class="form-group">
+                    <h3>Edit Informasi Akun</h3>
+                    <label for="name">Nama <span class="edit-icon">&#9998;</span></label>
+                    <input type="text" id="name" value="Ironi">
+
+                    <label for="email">Email <span class="edit-icon">&#9998;</span></label>
+                    <input type="email" id="email" value="example@example.com">
+
+                    <label for="phone">No. HP <span class="edit-icon">&#9998;</span></label>
+                    <input type="text" id="phone" value="081234567890">
+                </div>
+
+                <div class="form-group">
+                    <h3>Keamanan Akun</h3>
+                    <label for="password">Ubah Kata Sandi <span class="edit-icon">&#9998;</span></label>
+                    <input type="password" id="password" placeholder="Masukkan kata sandi baru">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

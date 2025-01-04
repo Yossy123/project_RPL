@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Jadwal Bantuan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eaf4ff;
+        }
+
+        .header {
+            background-color: #002d62;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .home-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-icon {
+            font-size: 4rem;
+        }
+
+        .time {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .description-box {
+            background-color: #e6f0ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .description-box h2 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .description-box textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .confirm-button {
+            background-color: #002d62;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.2s;
+        }
+
+        .confirm-button:hover {
+            background-color: #003a80;
+        }
+
+        .footer {
+            background-color: #002d62;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p:first-child {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer p:last-child {
+            font-size: 0.875rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="goBack()">←</button>
+        <div class="logo">
+            <img src="img/SiapBantu_Logo.png" alt="Logo">
+            <h1>SiapBantu</h1>
+        </div>
+        <a href="homepage.html" class="home-link">
+            <span>Beranda</span>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <div class="schedule-header">
+            <span class="calendar-icon">📅</span>
+            <h2 class="time">PM. 18.59</h2>
+        </div>
+
+        <div class="description-box">
+            <h2>Deskripsi Pemesanan Tambahan</h2>
+            <textarea placeholder="Tulis deskripsi tambahan di sini..."></textarea>
+        </div>
+
+        <button onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">
+            Konfirmasi Jadwal
+        </button>
+    </main>
+
+    <footer class="footer">
+        <p>Butuh bantuan? Hubungi Tim Kami</p>
+        <p>Senin - Minggu 06.00 - 22.00 (WIB)</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            // Add navigation logic here
+            alert('Navigating back...');
+        }
+
+        function confirmSchedule() {
+            const description = document.querySelector('textarea').value;
+            if (description.trim()) {
+                alert('Jadwal berhasil dikonfirmasi!');
+            } else {
+                alert('Silakan isi deskripsi pemesanan terlebih dahulu.');
+            }
+        }
+
+        // Update time every minute
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const formattedHours = hours % 12 || 12;
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            document.querySelector('.time').textContent = 
+                `${period}. ${formattedHours}.${formattedMinutes}`;
+        }
+
+        // Update time initially and start interval
+        updateTime();
+        setInterval(updateTime, 60000);
+    </script>
+</body>
+</html>

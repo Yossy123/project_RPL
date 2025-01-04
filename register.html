@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      display: flex;
+      width: 80%;
+      max-width: 900px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .register-section {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    }
+
+    .register-section h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #002244;
+    }
+
+    .login {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .login a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    .social-login {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-login .icons img {
+      width: 30px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .logo-section {
+      flex: 1;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-section h2 {
+      color: #666;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="register-section">
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Kata sandi" required>
+        <input type="text" placeholder="Pilih peran (Pengguna atau Penyedia Jasa)" required>
+        <button href="daftar.html">Daftar</button>
+        <div class="login">
+          Sudah Punya akun? <a href="daftar.html">Login</a>
+        </div>
+        <div class="social-login">
+          <span>Atau daftar dengan:</span>
+          <div class="icons">
+            <img src="gugel.png" alt="Google">
+            <img src="twitter.png" alt="Twitter">
+            <img src="fb.png" alt="Facebook">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="logo-section">
+      <h2>Logo Siap Bantu</h2>
+    </div>
+  </div>
+
+<script>
+
+const registeredUsers = [];
+
+
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  const name = document.querySelector("input[placeholder='Nama Lengkap']").value;
+  const email = document.querySelector("input[placeholder='Email']").value;
+  const password = document.querySelector("input[placeholder='Kata sandi']").value;
+  const role = document.querySelector("input[placeholder='Pilih peran (Pengguna atau Penyedia Jasa)']").value;
+
+  if (!name || !email || !password || !role) {
+    alert("Semua kolom harus diisi!");
+    return;
+  }
+
+  const userExists = registeredUsers.some(user => user.email === email);
+
+  if (userExists) {
+    alert("Email sudah terdaftar! Gunakan email lain.");
+    return;
+  }
+
+  registeredUsers.push({ name, email, password, role });
+  alert("Pendaftaran berhasil! Silakan login.");
+
+  window.location.href = 'login.html';
+});
+</script>
+
+</body>
+</html>

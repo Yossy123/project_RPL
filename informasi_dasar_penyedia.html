@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .navbar {
+            background-color: #002855;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #e9eff6;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sidebar .user-icon-container {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .user-icon-container img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #fff;
+            border: 2px solid #D0E4FF;
+        }
+
+        .sidebar button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .sidebar button:hover {
+            background-color: #036acb;
+        }
+
+        .main-content {
+            width: 75%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            background-color: #f0f0f0;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+
+        .profile-info {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background-color: #e9eff6;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .info-box p strong {
+            color: #002b5b;
+        }
+
+        .footer {
+            background-color: #002855;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="SiapBantu_Logo.png" alt="SiapBantu Logo">
+        </div>
+        <div class="title">SiapBantu</div>
+        <div class="nav">
+            <a href="homepage.html">Beranda</a>
+            <a href="notifikasi_jadwal_penyedia_jasa.html">Notifikasi Pesanan</a>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="user-icon-container">
+                <img src="orang.png" alt="User Icon">
+            </div>
+            <button onclick="window.location.href='informasi_dasar_penyedia.html'">Informasi Dasar Penyedia</button>
+            <button onclick="window.location.href='ulasan.html'">Riwayat Ulasan dan Rating</button>
+            <button onclick="window.location.href='notifikasi_jadwal_penyedia_jasa.html'">Notifikasi Pesanan</button>
+            <button onclick="window.location.href='akun.html'">Pengaturan Akun</button>
+        </div>
+
+        <div class="main-content">
+            <div class="profile">
+                <img src="orang.png" alt="Profile Picture">
+                <div class="profile-info">
+                    Ironi
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Email:</strong> ironi@gmail.com</p>
+                <p><strong>No. HP:</strong> 0099876</p>
+                <p><strong>Alamat:</strong> Parung Tirizmen</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Butuh bantuan? Hubungi Tim Kami<br>
+        Senin - Minggu 06.00 - 22.00 (WIB)
+    </div>
+
+</body>
+</html>

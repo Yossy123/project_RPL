@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        display: flex;
+        width: 80%;
+        max-width: 900px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .login-section {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+      }
+
+      .login-section h2 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      form .options {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+      }
+
+      form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #003366;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #002244;
+      }
+
+      .register {
+        margin: 10px 0;
+        font-size: 14px;
+      }
+
+      .register a {
+        color: #003366;
+        text-decoration: none;
+      }
+
+      .social-login {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .social-login .icons img {
+        width: 30px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .logo-section {
+        flex: 1;
+        background: #f3f3f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo-section h2 {
+        color: #666;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-section">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <div class="options">
+            <a href="#">Lupa Password</a>
+          </div>
+          <button type="button" onclick="login()">Login</button>
+          <div class="register">
+            Belum Daftar? <a href="register2.html">Daftar</a>
+          </div>
+        </form>
+      </div>
+      <div class="logo-section">
+        <h2>Logo Siap Bantu</h2>
+      </div>
+    </div>
+
+    <script>
+      const users = {
+        admin: { email: "admin@domain.com", password: "admin123", role: "admin" },
+        pengguna: { email: "user@domain.com", password: "user123", role: "pengguna" },
+        penyedia: { email: "provider@domain.com", password: "provider123", role: "penyedia" },
+      };
+
+      function login() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        let foundUser = null;
+
+        for (const key in users) {
+          const user = users[key];
+          if (user.email === email && user.password === password) {
+            foundUser = user;
+            break;
+          }
+        }
+
+        if (foundUser) {
+          switch (foundUser.role) {
+            case "admin":
+              window.location.href = "admin.html";
+              break;
+            case "pengguna":
+              window.location.href = "profilepengguna.html";
+              break;
+            case "penyedia":
+              window.location.href = "informasi_dasar_penyedia.html";
+              break;
+          }
+        } else {
+          alert("Email atau password salah!");
+        }
+      }
+    </script>
+  </body>
+</html>
+

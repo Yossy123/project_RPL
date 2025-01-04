@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pencarian Jasa - SiapBantu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f8ff;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #091F5B;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .home-button {
+            color: white;
+            text-decoration: none;
+            background-color: rgb(0, 186, 254);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #004886;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #D0E4FF;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .info-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .info-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .track-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgb(0, 186, 254);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .track-button:hover {
+            background-color: #004886;
+        }
+
+        .profile-button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: rgb(0, 186, 254);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .profile-button:hover {
+            background-color: #004886;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #091F5B;
+            color: white;
+            padding: 10px 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="SiapBantu_Logo.png" alt="Logo SiapBantu" class="logo">
+        <h1>SiapBantu</h1>
+        <a href="homepage.html" class="home-button">Beranda</a>
+    </div>
+    <div class="content">
+        <div class="image-placeholder"></div>
+        <div class="info-container">
+            <label for="provider-name">Nama penyedia jasa :</label>
+            <input type="text" id="provider-name" value="Ironi" readonly>
+            <label for="service-category">Kategori layanan :</label>
+            <input type="text" id="service-category" value="Teknisi" readonly>
+            <label for="distance">Jarak ke pengguna :</label>
+            <input type="text" id="distance" value="5 km" readonly>
+            <button class="track-button" onclick="window.location.href='lokasi.html'">Lacak</button>
+        </div>
+        <button class="track-button" onclick="window.location.href='Halaman_Profil_Penyedia_Jasaa.html'">Lihat Profil</button>
+    </div>
+    <div class="footer">
+        <p>Butuh bantuan? Hubungi Tim Kami</p>
+        <p>Senin - Minggu 06:00 - 22:00 (WIB)</p>
+    </div>
+    <script>
+        document.querySelector('.track-button').addEventListener('click', () => {
+            alert('Fitur Lacak belum tersedia.');
+        });
+
+        document.querySelector('.profile-button').addEventListener('click', () => {
+            alert('Menuju halaman profil penyedia jasa.');
+        });
+    </script>
+</body>
+</html>

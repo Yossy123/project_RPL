@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Verifikasi - SiapBantu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f8ff;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #D0E4FF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #091F5B;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .header span {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav {
+            font-size: 14px;
+        }
+
+        .nav a {
+            color: #FFC300;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ffff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #FFC300;
+            color: #002d72;
+        }
+
+        .form {
+            padding: 20px;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form input[type="text"], 
+        .form input[type="tel"], 
+        .form input[type="file"] {
+            width: 97%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            background-color: #fff;
+        }
+
+        .form input:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        .form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #091F5B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form button:hover {
+            background-color: #0056b3;
+        }
+
+        .status {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #4caf50;
+            font-size: 14px;
+        }
+
+        .footer {
+            background-color: #091F5B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        footer span {
+            font-size: 14px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .header {
+                justify-content: center;
+            }
+
+            .header .nav {
+                position: absolute;
+                right: 20px;
+            }
+
+            .container {
+                max-width: 700px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <span>SiapBantu</span>
+    <div class="nav">
+        <a href="#about">Tentang Kami</a>
+    </div>
+</div>
+<div class="container">
+    <div class="form">
+        <form id="verificationForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Joko Jayadi" required>
+
+            <label for="dob">Tempat Tanggal Lahir:</label>
+            <input type="text" id="dob" name="dob" placeholder="Bogor, 05 September 2003" required>
+
+            <label for="address">Alamat:</label>
+            <input type="text" id="address" name="address" placeholder="Perumahan Griya Ciledug Indah" required>
+
+            <label for="phone">No. HP:</label>
+            <input type="tel" id="phone" name="phone" placeholder="08789123456" required>
+
+            <label for="ktp">Foto KTP:</label>
+            <input type="file" id="ktp" name="ktp" accept="image/*" required>
+
+            <button onclick="window.location.href='admin.html'">Unggah Dokumen</button>
+
+            <div class="status" id="status">Status Verifikasi</div>
+        </form>
+    </div>
+   
+</div>
+    <div class="footer">
+        <span>Butuh bantuan?</span>
+        Hubungi Tim Kami<br>
+        Senin - Minggu 08:00 - 22:00 (WIB)
+    </div>
+<script>
+    document.getElementById('verificationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('status').textContent = 'Dokumen berhasil diunggah dan sedang diverifikasi.';
+    });
+</script>
+</body>
+</html>

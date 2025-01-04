@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lokasi Terdekat</title>
+  <style>
+    /* Reset dan styling global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background: #002060;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 10px 20px;
+    }
+
+    header .logo {
+      position: absolute;
+      left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    header .title {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    header .menu-button {
+      position: absolute;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    main h1 {
+      text-align: center;
+      color: #002060;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .map {
+      flex: 1 1 55%;
+      position: relative;
+      min-width: 300px;
+    }
+
+    .map img {
+      width: 75%;
+      height: 79%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .location-info {
+      flex: 1 1 40%;
+      text-align: center;
+      background: #95C9FB;
+      border-radius: 15px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+      max-width: 450px;
+    }
+
+    .location-info h2 {
+      color: #002060;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .location-info p {
+      margin: 5px 0;
+      font-size: 1.2em;
+    }
+
+    footer {
+      text-align: center;
+      background: #002060;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .map, .location-info {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="img/SiapBantu_Logo.png" alt="Logo">
+        <span>Logo</span>
+      </div>
+      <div class="title">SiapBantu</div>
+      <button class="menu-button">Back</button>
+    </header>
+    <main>
+      <h1>Lokasi Terdekat (GPS)</h1>
+      <div class="content">
+        <div class="map">
+          <img src="img/maps.jpeg" alt="Map">
+          <div class="location-pin"></div>
+        </div>
+        <div class="location-info">
+          <h2>Ironi</h2>
+          <p>★★★★★</p>
+          <p>500M</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Butuh bantuan? Hubungi Tim Kami</p>
+      <p>Senin - Minggu 06:00 - 22:00 (WIB)</p>
+    </footer>
+  </div>
+</body>
+</html>

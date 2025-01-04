@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Daftar Ulasan</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .navbar {
+            background-color: #002855;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar .nav a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #e9eff6;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sidebar .user-icon-container {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .user-icon-container img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #fff;
+            border: 2px solid #ccc;
+        }
+
+        .sidebar button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .sidebar button:hover {
+            background-color: #036acb;
+        }
+
+        .main-content {
+            width: 75%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviews-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: #e9eff6;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+            background-color: #fff;
+            border: 2px solid #ccc;
+        }
+
+        .review-card .name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .review-card .description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .review-card .rating {
+            color: #f5a623;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="SiapBantu_Logo.png" alt="SiapBantu Logo">
+        </div>
+        <div class="title">SiapBantu</div>
+        <div class="nav">
+            <a href="homepage.html">Beranda</a>
+            <a href="notifikasi_jadwal_penyedia_jasa.html">Notifikasi Pesanan</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="user-icon-container">
+                <img src="orang.png" alt="User Icon">
+            </div>
+            <button onclick="window.location.href='informasi_dasar_penyedia.html'">Informasi Dasar Penyedia</button>
+            <button onclick="window.location.href='ulasan.html'">Riwayat Ulasan dan Rating</button>
+            <button onclick="window.location.href='notifikasi_jadwal_penyedia_jasa.html'">Notifikasi Pesanan</button>
+            <button onclick="window.location.href='akun.html'">Pengaturan Akun</button>
+        </div>
+
+        <div class="main-content">
+            <div class="reviews-header">Daftar Ulasan</div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Ironi</div>
+                    <div class="description">bersih - bersih rumah</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Aceng</div>
+                    <div class="description">Merawat Kebun</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Jamal</div>
+                    <div class="description">Pendamping Hewan</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Bambang</div>
+                    <div class="description">Membantu Angkat Belanja</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Rusman</div>
+                    <div class="description">Memandikan Hewan Peliharaan</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+                <div class="review-card">
+                    <img src="orang.png" alt="User Icon">
+                    <div class="name">Damar</div>
+                    <div class="description">Memperbaiki Atap Rumah</div>
+                    <div class="rating">★★★★★</div>
+                    <div class="note">Pekerjaan bersih dan bagus</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

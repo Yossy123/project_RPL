@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Notifikasi Pesanan</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .navbar {
+            background-color: #002855;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar .nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #e9eff6;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sidebar .user-icon-container {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .user-icon-container img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #fff;
+            border: 2px solid #ccc;
+        }
+
+        .sidebar button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .sidebar button:hover {
+            background-color: #036acb;
+        }
+
+        .main-content {
+            width: 75%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notifications-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .notification-card {
+            background-color: #e9eff6;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-card .details {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .notification-card .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .notification-card .actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+        }
+
+        .notification-card .actions .accept {
+            background-color: #28a745;
+        }
+
+        .notification-card .actions .reject {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="SiapBantu_Logo.png" alt="SiapBantu Logo">
+        </div>
+        <div class="title">SiapBantu</div>
+        <div class="nav">
+            <a href="homepage.html">Beranda</a>
+            <a href="#">Notifikasi Pesanan</a>
+        </div>
+</div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="user-icon-container">
+                <img src="orang.png" alt="User Icon">
+            </div>
+            <button onclick="window.location.href='informasi_dasar_penyedia.html'">Informasi Dasar Penyedia</button>
+            <button onclick="window.location.href='ulasan.html'">Riwayat Ulasan dan Rating</button>
+            <button onclick="window.location.href='notifikasi_jadwal_penyedia_jasa.html'">Notifikasi Pesanan</button>
+            <button onclick="window.location.href='akun.html'">Pengaturan Akun</button>
+        </div>
+
+        <div class="main-content">
+            <div class="notifications-header">Notifikasi Pesanan</div>
+            <div class="notification-card">
+                <div class="details">
+                    <strong>Jamal - Mencuci Mobil</strong><br>
+                    25 November 2024, Pukul 10.00 WIB
+                </div>
+                <div class="actions">
+                    <button class="reject" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Reject</button>
+                    <button class="accept" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Accept</button>
+                </div>
+            </div>
+            <div class="notification-card">
+                <div class="details">
+                    <strong>ACENG - Laundry</strong><br>
+                    28 November 2024, Pukul 10.00 WIB
+                </div>
+                <div class="actions">
+                    <button class="reject" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Reject</button>
+                    <button class="accept" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Accept</button>
+                </div>
+            </div>
+            <div class="notification-card">
+                <div class="details">
+                    <strong>Ironi - Bersih Bersih Rumah</strong><br>
+                    18 Desember 2024, Pukul 10.00 WIB
+                </div>
+                <div class="actions">
+                    <button class="reject" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Reject</button>
+                    <button class="accept" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Accept</button>
+                </div>
+            </div>
+            <div class="notification-card">
+                <div class="details">
+                    <strong>Bambang - Mengurus Hewan Peliharaan</strong><br>
+                    23 Desember 2024, Pukul 10.00 WIB
+                </div>
+                <div class="actions">
+                    <button class="reject" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Reject</button>
+                    <button class="accept" onclick="window.location.href='notifikasi_jadwal_pengguna2.html'">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        .message.sent {
+            flex-direction: row-reverse;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bubble {
+            max-width: 70%;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .received .bubble {
+            background-color: #4285f4;
+            color: white;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .sent .bubble {
+            background-color: #4285f4;
+            color: white;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .chat-input {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 1.5rem;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .input-field input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-button {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #666;
+            padding: 0.25rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">←</button>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="message sent">
+            <div class="avatar">👤</div>
+            <div class="bubble">minn bisa di kerjakan hari ini?</div>
+        </div>
+
+        <div class="message received">
+            <div class="avatar">👤</div>
+            <div class="bubble">Bisa Kak, kami siap melayani dengan baik dan cepat</div>
+        </div>
+
+        <div class="message sent">
+            <div class="avatar">👤</div>
+            <div class="bubble">Oke min, saya tunggu</div>
+        </div>
+
+        <div class="message received">
+            <div class="avatar">👤</div>
+            <div class="bubble">Baik, Kak</div>
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <div class="input-field">
+            <button class="action-button">📷</button>
+            <input type="text" placeholder="Kirim Pesan....." id="messageInput">
+            <button class="action-button">🎤</button>
+        </div>
+        <div class="action-buttons">
+            <button class="action-button">😊</button>
+            <button class="action-button">🖼️</button>
+            <button class="action-button">➕</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // Add navigation logic here
+            alert('Navigating back...');
+        }
+
+        const messageInput = document.getElementById('messageInput');
+        const chatContainer = document.getElementById('chatContainer');
+
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                // Create new message element
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message sent';
+                messageDiv.innerHTML = `
+                    <div class="avatar">👤</div>
+                    <div class="bubble">${this.value}</div>
+                `;
+
+                // Add message to chat
+                chatContainer.appendChild(messageDiv);
+
+                // Clear input
+                this.value = '';
+
+                // Scroll to bottom
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>

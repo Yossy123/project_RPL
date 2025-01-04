@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Detail Pendaftar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+
+        .navbar {
+            background-color: #003f88;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-size: 20px;
+            font-weight: bold;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .navbar .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 50px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #e7f0fc;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .sidebar .menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .sidebar .menu li a:hover {
+            background-color: #cbe0fa;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .content .title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            background-color: #cbe0fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form {
+            background-color: #cbe0fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form .form-group {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .form .form-group label {
+            flex: 0 0 150px;
+            font-weight: bold;
+        }
+
+        .form .form-group input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form .form-group input[type="file"] {
+            border: none;
+        }
+
+        .form .form-group .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .form .form-group .actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form .form-group .actions .approve {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .form .form-group .actions .not-approve {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="SiapBantu_Logo.png" alt="SiapBantu Logo">
+        </div>
+        <div class="title">SiapBantu</div>
+        <div class="nav">
+            <a href="homepage.html">Beranda</a>
+            <a href="notifikasi_jadwal_penyedia_jasa.html">Notifikasi Pesanan</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <img src="orang.png" alt="Profile" class="profile-image">
+            <ul class="menu">
+                <li><a href="admin_statistik.html">Semua Statistik</a></li>
+                <li><a href="#">Pendaftar</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="title">Detail Pendaftar</div>
+
+            <div class="form">
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" placeholder="Masukkan Nama">
+                </div>
+                <div class="form-group">
+                    <label for="birthplace">Tempat Tanggal Lahir</label>
+                    <input type="text" id="birthplace" placeholder="Masukkan Tempat Tanggal Lahir">
+                </div>
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <input type="text" id="address" placeholder="Masukkan Alamat">
+                </div>
+                <div class="form-group">
+                    <label for="phone">No. HP</label>
+                    <input type="text" id="phone" placeholder="Masukkan No. HP">
+                </div>
+                <div class="form-group">
+                    <label for="ktp">Foto KTP</label>
+                    <input type="file" id="ktp">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

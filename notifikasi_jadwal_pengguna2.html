@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiapBantu - Notifikasi Jadwal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: #002855;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .notification {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.accepted {
+            border-color: #28a745;
+        }
+
+        .notification.rejected {
+            border-color: #dc3545;
+        }
+
+        .info {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .name-task {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .time {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .status {
+            font-weight: bold;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status.accepted {
+            background-color: #28a745;
+        }
+
+        .status.rejected {
+            background-color: #dc3545;
+        }
+
+        .footer {
+            background-color: #002855;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="SiapBantu_Logo.png" alt="Logo">
+        <h1 class="header-title">SiapBantu</h1>
+        <a href="homepage.html" class="home-link">Beranda</a>
+    </div>
+
+    <div class="container">
+        <div class="title">Notifikasi Jadwal</div>
+
+        <div class="notification accepted">
+            <div class="info">
+                <div class="name-task">Jamal - Pembersihan Khusus</div>
+                <div class="time">25 Desember, 2024 18.30 WIB</div>
+            </div>
+            <div class="status accepted">Diterima</div>
+        </div>
+
+        <div class="notification rejected">
+            <div class="info">
+                <div class="name-task">ACENG - Laundry</div>
+                <div class="time">25 Desember, 2024 10.00 WIB</div>
+            </div>
+            <div class="status rejected">Ditolak</div>
+        </div>
+
+        <div class="notification accepted">
+            <div class="info">
+                <div class="name-task">Ironi - Bersih Bersih Rumah</div>
+                <div class="time">18 Desember, 2024 10.00 WIB</div>
+            </div>
+            <div class="status accepted">Diterima</div>
+        </div>
+
+        <div class="notification rejected">
+            <div class="info">
+                <div class="name-task">Bambang - Mengurus Hewan Peliharaan</div>
+                <div class="time">23 Desember, 2024 10.00 WIB</div>
+            </div>
+            <div class="status rejected">Ditolak</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Butuh bantuan? Hubungi Tim Kami</p>
+        <p>Senin - Minggu 06.00 - 22.00 (WIB)</p>
+    </div>
+</body>
+</html>

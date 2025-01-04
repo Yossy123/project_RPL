@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Profil Pengguna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaf4ff;
+        }
+        .header {
+            background-color: #002d62;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            flex: 1;
+            text-align: center;
+        }
+        .header .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .header .menu span {
+            cursor: pointer;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .header .menu span:hover {
+            color: #cce5ff;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #d9ebff;
+            padding: 20px;
+            height: calc(100vh - 100px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 5px solid #d9ebff;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 15px;
+        }
+        .sidebar .button {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
+        .form-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .form-card {
+            background-color: #cce5ff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        .form-card h3 {
+            margin-top: 0;
+            text-align: center;
+            background-color: #d9ebff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .form-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-card label {
+            font-weight: bold;
+        }
+        .form-card input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-card button {
+            padding: 10px;
+            background-color: #002d62;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .footer {
+            background-color: #002d62;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="/img/SiapBantu_Logo.png" alt="Logo SiapBantu" class="logo">
+    <h1>SiapBantu</h1>
+    <div class="menu">
+        <span>Notifikasi Pesanan</span>
+        <span>Beranda</span>
+    </div>
+</div>
+
+<div style="display: flex;">
+    <div class="sidebar">
+        <img src="/img/fotopengguna3.jpg" alt="Profile Picture">
+        <h3>Rusdi <a href="#" style="font-size: 14px;">&#9998;</a></h3>
+        <button onclick="window.location.href='profilepengguna.html'" class="button">Informasi Dasar Pengguna</button>
+        <button onclick="window.location.href='berikanrating.html'" class="button">Berikan Rating</button>
+        <button onclick="window.location.href='pengaturanakun.html'" class="button">Pengaturan Akun</button>
+    </div>
+
+    <div class="main-content">
+        <div class="form-section">
+            <!-- Form Edit Informasi Akun -->
+            <div class="form-card">
+                <h3>Edit Informasi Akun</h3>
+                <form>
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+
+                    <label for="phone">No. HP:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP Anda">
+
+                    <button type="submit">Simpan Perubahan</button>
+                </form>
+            </div>
+
+            <!-- Form Kata Sandi Akun -->
+            <div class="form-card">
+                <h3>Kata Sandi Akun</h3>
+                <form>
+                    <label for="current-password">Ubah Kata Sandi:</label>
+                    <input type="password" id="current-password" name="current-password" placeholder="Masukkan kata sandi saat ini">
+
+                    <label for="new-password">Kata Sandi Baru:</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Masukkan kata sandi baru">
+
+                    <button type="submit">Simpan Perubahan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Butuh bantuan? Hubungi Tim Kami</p>
+    <p>Senin - Minggu 06.00 - 22.00 (WIB)</p>
+</div>
+
+</body>
+</html>
